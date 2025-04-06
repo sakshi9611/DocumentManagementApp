@@ -4,6 +4,7 @@ import com.example.documentqa.dto.DocumentResponse;
 import com.example.documentqa.model.Document;
 import com.example.documentqa.repository.DocumentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,8 +13,10 @@ import java.util.stream.Collectors;
 public class QASearchService {
     @Autowired
     private DocumentRepository documentRepository;
+    @Cacheable(value = "qaCache", key = "#question")
     public List<DocumentResponse> search(String question) {
-        List<Document> docs = documentRepository.searchByKeyword(question);
+    	 System.out.println("fetching data from db"); // to check the db calls
+        List<Document> docs = documentRepository.searchByKeyword(question);      
         return docs.stream().map(doc -> {
             DocumentResponse response = new DocumentResponse();
             response.setId(doc.getId());
