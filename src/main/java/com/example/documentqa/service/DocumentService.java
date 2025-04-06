@@ -22,7 +22,7 @@ public class DocumentService {
     @Autowired
     private DocumentRepository documentRepository;
 
-    @Async
+    
     @Transactional
     public void ingestDocument(MultipartFile file, String author) throws Exception {
         String content = extractText(file);
