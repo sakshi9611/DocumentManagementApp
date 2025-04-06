@@ -106,7 +106,7 @@
             <scope>test</scope>
         </dependency>
         
-        <!-- Already present in Spring Boot starter -->
+        <!-- Spring cache -->
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-cache</artifactId>
