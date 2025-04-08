@@ -32,7 +32,7 @@ public class DocumentControllerTest {
 
         mockMvc.perform(multipart("/api/documents/upload")
                         .file(file)
-                        .param("author", "sakshi"))
+                        .param("author", "Sakshi"))
                 .andExpect(status().isOk());
     }
 }

@@ -37,7 +37,7 @@ class QASearchServiceTest {
         document.setAuthor("Sakshi");
         document.setType("pdf");
         document.setUploadDate(LocalDate.now());
-        document.setContent("This is a Java content document used for testing.");
+        document.setContent("This is a Java content document used for testing purpose.");
 
         when(documentRepository.searchByKeyword(question)).thenReturn(Collections.singletonList(document));
 

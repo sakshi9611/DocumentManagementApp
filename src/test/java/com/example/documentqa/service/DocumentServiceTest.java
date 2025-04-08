@@ -30,7 +30,7 @@ class DocumentServiceTest {
         String content = "Hello, this is a test document!";
         MockMultipartFile file = new MockMultipartFile("file", "test.txt", "text/plain", content.getBytes());
 
-        documentService.ingestDocument(file, "sakshi");
+        documentService.ingestDocument(file, "Sakshi");
 
         verify(documentRepository, times(1)).save(any(Document.class));
     }
